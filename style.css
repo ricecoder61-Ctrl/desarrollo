@@ -2082,3 +2082,160 @@ strong[title="MEJORA"]::before {
         border-radius: 6px;
     }
 }
+
+/* ============================================
+   SOLUCIÓN DEFINITIVA PARA ESPACIADO EN JERARQUÍA DE MEMORIA (2.4)
+   ============================================ */
+
+/* Ajuste GENERAL para todos los niveles de memoria */
+.memory-level {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 1.25rem !important; /* Más espacio interno */
+    gap: 0.75rem !important; /* Espacio entre elementos internos */
+}
+
+/* Contenedor del encabezado (icono + título) */
+.level-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0 !important;
+}
+
+/* Contenedor de detalles (velocidad + tamaño) */
+.level-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+    width: 100%;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+/* Estilos para los badges de velocidad y tamaño */
+.speed, .size {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 1rem !important;
+    margin: 0 !important;
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    font-weight: 600;
+    border-radius: 8px;
+    min-width: 70px;
+    text-align: center;
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border-color);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* Color específico para GB/TB */
+.size {
+    background: linear-gradient(135deg, var(--primary-color) 15%, var(--secondary-color) 85%);
+    color: white;
+    border: none;
+}
+
+/* Descripción del nivel - ESTO ES LO MÁS IMPORTANTE */
+.level-desc {
+    width: 100%;
+    padding: 0.75rem 0 0 0 !important;
+    margin-top: 0.5rem !important;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: var(--text-color);
+    text-align: left;
+    border-top: 1px dashed var(--border-color);
+}
+
+/* ============================================
+   RESPONSIVE: AJUSTES ESPECÍFICOS PARA MÓVIL
+   ============================================ */
+
+@media (max-width: 768px) {
+    .memory-level {
+        padding: 1rem !important;
+        gap: 0.5rem !important;
+    }
+    
+    .level-details {
+        flex-direction: column;
+        gap: 0.5rem;
+        align-items: stretch;
+        padding: 0.75rem 0;
+    }
+    
+    .speed, .size {
+        width: 100%;
+        padding: 0.6rem !important;
+        font-size: 0.85rem;
+    }
+    
+    .level-desc {
+        padding: 0.5rem 0 0 0 !important;
+        font-size: 0.9rem;
+        line-height: 1.4;
+    }
+    
+    /* Separación extra para el texto descriptivo largo */
+    .memory-level.level4 .level-desc,
+    .memory-level.level5 .level-desc {
+        padding-top: 0.75rem !important;
+        line-height: 1.5;
+    }
+}
+
+/* ============================================
+   AJUSTES ESPECÍFICOS PARA PC (ESCRITORIO)
+   ============================================ */
+
+@media (min-width: 769px) {
+    .memory-level {
+        min-height: 140px; /* Altura mínima para consistencia */
+        justify-content: space-between;
+    }
+    
+    .level-desc {
+        padding-top: 0.75rem !important;
+        line-height: 1.6;
+        min-height: 50px; /* Espacio garantizado para la descripción */
+    }
+    
+    /* Espacio extra específico para el nivel 4 (DRAM) */
+    .memory-level.level4 .level-desc {
+        padding-top: 0.85rem !important;
+        margin-top: 0.75rem !important;
+    }
+}
+
+/* ============================================
+   ESTILOS ADICIONALES PARA MEJOR VISUALIZACIÓN
+   ============================================ */
+
+/* Efecto hover para mejor interacción */
+.memory-level:hover .level-desc {
+    color: var(--primary-color);
+    transition: color 0.3s ease;
+}
+
+/* Mejorar la legibilidad en modo oscuro */
+[data-theme="dark"] .level-desc {
+    color: var(--text-light);
+    opacity: 0.9;
+}
+
+[data-theme="dark"] .speed {
+    background: var(--bg-tertiary);
+    color: var(--text-color);
+}
+
+/* Asegurar que no haya desbordamiento */
+.memory-level * {
+    box-sizing: border-box;
+    max-width: 100%;
+    word-wrap: break-word;
+}
