@@ -1,0 +1,1417 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arquitectura de Computadores: Evolución y Paradigmas Emergentes</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💻</text></svg>">
+</head>
+<body>
+    <!-- Botón de modo oscuro/claro -->
+    <button id="theme-toggle" class="theme-toggle" aria-label="Cambiar tema">
+        <i class="fas fa-moon"></i>
+        <i class="fas fa-sun"></i>
+    </button>
+
+    <!-- Botón para ir al inicio -->
+    <button id="scroll-top" class="scroll-top" aria-label="Ir al inicio">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- Navegación flotante -->
+    <nav id="floating-nav" class="floating-nav">
+        <div class="nav-header">
+            <h3><i class="fas fa-microchip"></i> Navegación</h3>
+            <button class="nav-toggle" id="nav-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="#capitulo1" class="nav-link"><i class="fas fa-play"></i> Capítulo 1</a></li>
+            <li><a href="#capitulo2" class="nav-link"><i class="fas fa-cogs"></i> Capítulo 2</a></li>
+            <li><a href="#capitulo3" class="nav-link"><i class="fas fa-microchip"></i> Capítulo 3</a></li>
+            <li><a href="#capitulo4" class="nav-link"><i class="fas fa-rocket"></i> Capítulo 4</a></li>
+            <li><a href="#capitulo5" class="nav-link"><i class="fas fa-lightbulb"></i> Capítulo 5</a></li>
+            <li><a href="#paradigma-centripeto" class="nav-link"><i class="fas fa-sync-alt"></i> Paradigma</a></li>
+            <li><a href="#estructura-basica" class="nav-link"><i class="fas fa-sitemap"></i> Estructura</a></li>
+        </ul>
+    </nav>
+
+    <!-- Header principal -->
+    <header class="main-header">
+        <div class="header-content">
+            <div class="header-badge">
+                <span class="badge"><i class="fas fa-book"></i> Investigación</span>
+                <span class="badge"><i class="fas fa-graduation-cap"></i> Académico</span>
+            </div>
+            <h1 class="title-main">Evolución, Principios y Paradigmas Emergentes en la Arquitectura de Computadores</h1>
+            <p class="subtitle">Hacia más Allá de la Ley de Moore</p>
+            
+            <div class="header-stats">
+                <div class="stat">
+                    <i class="fas fa-file-alt"></i>
+                    <span>8 Capítulos</span>
+                </div>
+                <div class="stat">
+                    <i class="fas fa-clock"></i>
+                    <span>Lectura: 45 min</span>
+                </div>
+                <div class="stat">
+                    <i class="fas fa-calendar-alt"></i>
+                    <span id="current-date"></span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="header-wave">
+            <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"></path>
+            </svg>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Indicador de progreso -->
+        <div class="progress-container">
+            <div class="progress-bar" id="progress-bar"></div>
+        </div>
+
+        <!-- Contenido principal -->
+        <article class="content-wrapper">
+            <!-- Capítulo 1: Introducción -->
+            <section id="capitulo1" class="chapter">
+                <div class="chapter-header">
+                    <div class="chapter-number">01</div>
+                    <h2 class="chapter-title">Capítulo 1: Introducción</h2>
+                    <div class="chapter-icon">
+                        <i class="fas fa-play-circle"></i>
+                    </div>
+                </div>
+                
+                <!-- 1.1 Planteamiento del Problema -->
+                <section id="planteamiento-problema" class="section">
+                    <div class="section-header">
+                        <h3><i class="fas fa-question-circle"></i> 1.1. Planteamiento del Problema</h3>
+                        <div class="section-tag critical">Crítico</div>
+                    </div>
+                    <div class="section-content">
+                        <p>La desaceleración de la Ley de Moore, la "pared de la energía" (power wall) y la brecha de rendimiento entre CPU y memoria (memory wall) plantean desafíos existenciales a la arquitectura de computadores tradicional. Se requiere una reevaluación de los paradigmas fundamentales.</p>
+                        
+                        <p>La arquitectura de computadores se encuentra en un punto de inflexión histórico. El paradigma que ha dominado durante 50 años —impulsado por la Ley de Moore (la densidad de transistores se duplica cada ~2 años) y la escalado de Dennard (el consumo de potencia por área se mantiene constante al reducir transistores)— ha llegado a sus límites físicos y económicos.</p>
+                        
+                        <p>Este agotamiento ha revelado tres "muros" fundamentales:</p>
+                        
+                        <div class="cards-grid">
+                            <div class="card danger">
+                                <div class="card-icon">
+                                    <i class="fas fa-bolt"></i>
+                                </div>
+                                <h4>The Power Wall (El Muro de la Energía)</h4>
+                                <p>Dennard dejó de escalar ~2005. Los transistores ya no se vuelven más eficientes al miniaturizarse, llevando a densidades de potencia insostenibles. No podemos encender todos los transistores de un chip a la máxima frecuencia sin fundirlo.</p>
+                            </div>
+                            
+                            <div class="card warning">
+                                <div class="card-icon">
+                                    <i class="fas fa-memory"></i>
+                                </div>
+                                <h4>The Memory Wall (El Muro de la Memoria)</h4>
+                                <p>La velocidad de las CPUs ha crecido históricamente mucho más rápido que la latencia de la memoria DRAM. Hoy, una CPU puede estar cientos de ciclos ociosa esperando datos de la memoria principal, anulando ganancias en frecuencia o ILP.</p>
+                            </div>
+                            
+                            <div class="card info">
+                                <div class="card-icon">
+                                    <i class="fas fa-project-diagram"></i>
+                                </div>
+                                <h4>The ILP Wall (El Muro del Paralelismo a Nivel de Instrucción)</h4>
+                                <p>Las técnicas para extraer paralelismo implícito de un flujo secuencial de instrucciones (superscalar, out-of-order) han alcanzado rendimientos marginales decrecientes, con una complejidad de diseño y consumo energético prohibitivos.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="highlight-box">
+                            <div class="highlight-icon">
+                                <i class="fas fa-exclamation-triangle"></i>
+                            </div>
+                            <div class="highlight-content">
+                                <h4>Problema Central</h4>
+                                <p>La arquitectura de von Neumann monolítica y de propósito general, optimizada para la frecuencia en escalas, ya no es sostenible. La pregunta de investigación es: ¿Cuáles son los nuevos principios arquitectónicos y paradigmas de organización que permitirán progresar en rendimiento y eficiencia energética en la era post-Moore/post-Dennard?</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- 1.2 Justificación -->
+                <section id="justificacion" class="section">
+                    <div class="section-header">
+                        <h3><i class="fas fa-check-circle"></i> 1.2. Justificación</h3>
+                        <div class="section-tag important">Importante</div>
+                    </div>
+                    <div class="section-content">
+                        <p>La arquitectura es la base de todo el ecosistema computacional. Entender su evolución y direcciones futuras es crucial para el desarrollo de software eficiente, la inteligencia artificial, la ciencia de datos y el avance tecnológico general.</p>
+                        
+                        <p>Esta investigación es fundamental porque la arquitectura es la disciplina fundacional que materializa las capacidades computacionales. Su evolución dicta:</p>
+                        
+                        <div class="feature-list">
+                            <div class="feature-item">
+                                <i class="fas fa-code"></i>
+                                <div>
+                                    <h4>Futuro del Software</h4>
+                                    <p>El futuro del software y los modelos de programación (ej., el auge de Python y frameworks se debe a hardware acelerado subyacente).</p>
+                                </div>
+                            </div>
+                            
+                            <div class="feature-item">
+                                <i class="fas fa-brain"></i>
+                                <div>
+                                    <h4>Tecnologías Disruptivas</h4>
+                                    <p>La viabilidad de tecnologías disruptivas (IA, metaverso, biomedicina computacional, climatología).</p>
+                                </div>
+                            </div>
+                            
+                            <div class="feature-item">
+                                <i class="fas fa-flag"></i>
+                                <div>
+                                    <h4>Soberanía Tecnológica</h4>
+                                    <p>La soberanía tecnológica, con el surgimiento de ISAs abiertas (RISC-V) y nuevos actores.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="feature-item">
+                                <i class="fas fa-leaf"></i>
+                                <div>
+                                    <h4>Sostenibilidad Ambiental</h4>
+                                    <p>La sostenibilidad ambiental de los centros de datos, cuyo consumo energético global es considerable.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- 1.3 Objetivos -->
+                <section id="objetivos" class="section">
+                    <div class="section-header">
+                        <h3><i class="fas fa-bullseye"></i> 1.3. Objetivos</h3>
+                        <div class="section-tag primary">Primario</div>
+                    </div>
+                    <div class="section-content">
+                        <div class="objective-card">
+                            <div class="objective-header">
+                                <i class="fas fa-star"></i>
+                                <h4>Objetivo General</h4>
+                            </div>
+                            <p>Analizar los principios fundamentales de la arquitectura de computadores, su evolución histórica y los paradigmas emergentes que definen su futuro.</p>
+                        </div>
+                        
+                        <div class="objectives-grid">
+                            <div class="objective-item">
+                                <span class="obj-number">01</span>
+                                <h5>Describir el modelo de von Neumann</h5>
+                                <p>Y sus limitaciones.</p>
+                            </div>
+                            
+                            <div class="objective-item">
+                                <span class="obj-number">02</span>
+                                <h5>Examinar técnicas de aumento de rendimiento</h5>
+                                <p>En procesadores modernos (pipelining, superscalar, multinúcleo).</p>
+                            </div>
+                            
+                            <div class="objective-item">
+                                <span class="obj-number">03</span>
+                                <h5>Analizar la jerarquía de memoria</h5>
+                                <p>Y su impacto crítico en el rendimiento.</p>
+                            </div>
+                            
+                            <div class="objective-item">
+                                <span class="obj-number">04</span>
+                                <h5>Investigarr arquitecturas heterogéneas</h5>
+                                <p>Y especializadas (GPUs, TPUs, FPGAs).</p>
+                            </div>
+                            
+                            <div class="objective-item">
+                                <span class="obj-number">05</span>
+                                <h5>Explorar tendencias futuras</h5>
+                                <p>Como la computación cuántica, neuromórfica y en memoria.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="insight-box">
+                            <h4>Objetivo General Detallado</h4>
+                            <p>Analizar la transición desde la arquitectura clásica de von Neumann hacia un nuevo paradigma basado en la heterogeneidad, la especialización y la proximidad a los datos, evaluando sus fundamentos, implementaciones y proyecciones futuras.</p>
+                            
+                            <h4>Objetivos Específicos Detallados:</h4>
+                            <ol class="numbered-list">
+                                <li><strong>Desentrañar los cuellos de botella fundamentales</strong> del modelo de von Neumann y cuantificar su impacto en el rendimiento y eficiencia modernos.</li>
+                                <li><strong>Explicar la evolución de las técnicas de aumento de rendimiento</strong> de la CPU, desde el pipelining hasta el multiprocesamiento en chip (CMP), como respuesta sucesiva a los límites encontrados.</li>
+                                <li><strong>Analizar el papel crítico de la jerarquía de memoria</strong> y la coherencia como sistemas complejos determinantes del rendimiento, más allá de la mera "velocidad de la CPU".</li>
+                                <li><strong>Investigar el paradigma de arquitecturas heterogéneas</strong>, definiendo taxonomías (GPUs, TPUs, FPGAs) y analizando su integración a través de sistemas SoC y bus avanzados (CXL).</li>
+                                <li><strong>Explorar y contrastar arquitecturas disruptivas</strong> post-von Neumann (computación en memoria, neuromórfica) que buscan redefinir los principios físicos de la computación.</li>
+                            </ol>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- 1.4 Metodología -->
+                <section id="metodologia" class="section">
+                    <div class="section-header">
+                        <h3><i class="fas fa-flask"></i> 1.4. Metodología</h3>
+                        <div class="section-tag">Metodológico</div>
+                    </div>
+                    <div class="section-content">
+                        <p>Investigación de tipo documental-analítica. Revisión sistemática de literatura científica (papers de IEEE, ACM), libros de texto clásicos (Hennessy & Patterson), whitepapers de la industria (Intel, NVIDIA, ARM) y análisis de casos de estudio.</p>
+                        
+                        <p>Investigación de tipo documental-analítica-sintética, estructurada en tres fases:</p>
+                        
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-marker">
+                                    <i class="fas fa-search"></i>
+                                </div>
+                                <div class="timeline-content">
+                                    <h4>Fase 1: Revisión Sistemática</h4>
+                                    <p>Búsqueda en bases de datos académicas (IEEE Xplore, ACM Digital Library, Scopus) de artículos seminales, surveys y papers de conferencias top (ISCA, MICRO, ASPLOS, HPCA).</p>
+                                </div>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <div class="timeline-marker">
+                                    <i class="fas fa-chart-line"></i>
+                                </div>
+                                <div class="timeline-content">
+                                    <h4>Fase 2: Análisis Comparativo y Evolutivo</h4>
+                                    <p>Estudio diacrónico de familias de microprocesadores (x86, ARM) y sincrónico de paradigmas competidores (GPU vs. TPU vs. FPGA). Uso de métricas objetivas (rendimiento/Watt, ancho de banda/latencia).</p>
+                                </div>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <div class="timeline-marker">
+                                    <i class="fas fa-cogs"></i>
+                                </div>
+                                <div class="timeline-content">
+                                    <h4>Fase 3: Síntesis Prospectiva</h4>
+                                    <p>Integración de tendencias tecnológicas (chiplets, fotónica) con modelos económicos y de mercado para proyectar trayectorias probables de desarrollo.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="note-box">
+                            <i class="fas fa-info-circle"></i>
+                            <p><strong>MEJORA:</strong> Se incluirá el análisis de benchmarks estándar de la industria (SPEC CPU, MLPerf, Rodinia) para contrastar afirmaciones con datos medibles.</p>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- 1.5 Alcances y Limitaciones -->
+                <section id="alcances-limitaciones" class="section">
+                    <div class="section-header">
+                        <h3><i class="fas fa-ruler-combined"></i> 1.5. Alcances y Limitaciones</h3>
+                        <div class="section-tag">Contextual</div>
+                    </div>
+                    <div class="section-content">
+                        <p>La tesis se enfoca en arquitecturas de propósito general y de alto rendimiento, con mención de dominios específicos. No pretende diseñar físicamente un chip, sino ofrecer un marco conceptual integral.</p>
+                        
+                        <div class="scope-limits">
+                            <div class="scope-card">
+                                <div class="scope-header scope">
+                                    <i class="fas fa-arrows-alt-h"></i>
+                                    <h4>Alcance</h4>
+                                </div>
+                                <ul>
+                                    <li>Se cubren arquitecturas para alto rendimiento (HPC), computación general (centros de datos) y móvil.</li>
+                                    <li>El análisis se centra en la organización del hardware.</li>
+                                    <li>Aspectos de software (modelos de programación) solo donde es esencial para la comprensión arquitectónica.</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="scope-card">
+                                <div class="scope-header limit">
+                                    <i class="fas fa-exclamation-circle"></i>
+                                    <h4>Limitaciones</h4>
+                                </div>
+                                <ul>
+                                    <li>No se aborda el diseño físico de circuitos (layout de transistores, fabricación VLSI).</li>
+                                    <li>Campo en rápida evolución; la investigación captura el estado del arte hasta [Año de tu investigación].</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </section>
+            
+            <!-- Capítulo 2: Fundamentos Teóricos -->
+            <section id="capitulo2" class="chapter">
+                <div class="chapter-header">
+                    <div class="chapter-number">02</div>
+                    <h2 class="chapter-title">Capítulo 2: Fundamentos Teóricos y Marco Conceptual</h2>
+                    <div class="chapter-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                </div>
+                
+                <!-- 2.1 Arquitectura de von Neumann -->
+                <section id="arquitectura-von-neumann" class="section">
+                    <div class="section-header">
+                        <h3><i class="fas fa-chess-board"></i> 2.1. La Arquitectura de von Neumann y sus Cuellos de Botella</h3>
+                        <div class="section-tag historical">Histórico</div>
+                    </div>
+                    <div class="section-content">
+                        <p>Descripción del modelo (CPU, Memoria, E/S, Bus) y análisis de la "bottleneck de von Neumann" (ancho de banda memoria/CPU).</p>
+                        
+                        <p>El modelo de 1945, con sus cuatro componentes (Unidad de Control/ALU, Memoria, Dispositivos E/S, Bus del sistema) y su principio de programa almacenado, estableció la arquitectura universal. Su cuello de botella es inherente: el bus compartido para instrucciones y datos crea una contención serializada. En términos modernos, el "Von Neumann Bottleneck" es el ancho de banda limitado entre la CPU y la memoria. Cada operación, por más rápida que sea la ALU, requiere múltiples accesos a memoria (fetch de instrucción, carga de datos, escritura de resultados), saturando el bus. Las jerarquías de caché son un parche evolutivo a este problema fundamental.</p>
+                    </div>
+                </section>
+                
+                <!-- 2.2 Métricas de Evaluación -->
+                <section id="metricas-evaluacion" class="section">
+                    <div class="section-header">
+                        <h3><i class="fas fa-chart-bar"></i> 2.2. Métricas de Evaluación</h3>
+                        <div class="section-tag technical">Técnico</div>
+                    </div>
+                    <div class="section-content">
+                        <p>Rendimiento (throughput, latency), IPC (Instrucciones por Ciclo), consumo de energía (Ley de Dennard), costo y fiabilidad.</p>
+                        
+                        <div class="metrics-grid">
+                            <div class="metric-card highlight">
+                                <div class="metric-icon">
+                                    <i class="fas fa-bolt"></i>
+                                </div>
+                                <h4>Rendimiento por Vatio</h4>
+                                <p class="metric-value">Métrica Reina</p>
+                                <p class="metric-desc">FLOPS/Watt o inferencias por vatio en la era post-Dennard</p>
+                            </div>
+                            
+                            <div class="metric-card">
+                                <div class="metric-icon">
+                                    <i class="fas fa-tachometer-alt"></i>
+                                </div>
+                                <h4>Tiempo de Ejecución</h4>
+                                <p class="metric-value">Nº Instrucciones × CPI × Tiempo Ciclo</p>
+                                <p class="metric-desc">Determinante fundamental del rendimiento</p>
+                            </div>
+                            
+                            <div class="metric-card">
+                                <div class="metric-icon">
+                                    <i class="fas fa-shipping-fast"></i>
+                                </div>
+                                <h4>Ancho de Banda</h4>
+                                <p class="metric-value">GB/s</p>
+                                <p class="metric-desc">Capacidad de transferencia de datos</p>
+                            </div>
+                            
+                            <div class="metric-card">
+                                <div class="metric-icon">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <h4>Latencia</h4>
+                                <p class="metric-value">ns</p>
+                                <p class="metric-desc">Tiempo de respuesta del sistema</p>
+                            </div>
+                        </div>
+                        
+                        <div class="insight-box">
+                            <p><strong>MEJORA:</strong> La métrica reina en la era post-Dennard es el rendimiento por vatio (FLOPS/Watt o inferencias por vatio). La Ley de Dennard permitió que el consumo se mantuviera estable al miniaturizar, pero su fin convirtió la eficiencia energética en el principal limitante. Otras métricas clave incluyen el tiempo de ejecución (determinado por Nº de instrucciones * CPI * tiempo de ciclo), el ancho de banda de memoria (GB/s), la latencia (ns) y el costo por rendimiento ($/GFLOPS). La fiabilidad (FIT rate, MTBF) es crucial en entornos a escala.</p>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- 2.3 Conceptos de ISA -->
+                <section id="conceptos-isa" class="section">
+                    <div class="section-header">
+                        <h3><i class="fas fa-code"></i> 2.3. Conceptos de Conjunto de Instrucciones (ISA)</h3>
+                        <div class="section-tag">Fundamental</div>
+                    </div>
+                    <div class="section-content">
+                        <p>El contrato entre hardware y software. Comparativa RISC (ARM, RISC-V) vs CISC (x86). El rol emergente de RISC-V como ISA abierta.</p>
+                        
+                        <p>La Arquitectura del Conjunto de Instrucciones (ISA) es la interfaz visible entre el hardware y el software. Define las operaciones que puede realizar el procesador, los registros, los modos de direccionamiento y el modelo de memoria. Es un contrato de compatibilidad que perdura décadas.</p>
+                        
+                        <div class="comparison">
+                            <div class="comp-card cisc">
+                                <div class="comp-header">
+                                    <i class="fas fa-layer-group"></i>
+                                    <h4>CISC (x86-64)</h4>
+                                </div>
+                                <ul>
+                                    <li><i class="fas fa-check"></i> Instrucciones complejas</li>
+                                    <li><i class="fas fa-check"></i> Múltiples modos de direccionamiento</li>
+                                    <li><i class="fas fa-check"></i> Código denso</li>
+                                    <li><i class="fas fa-times"></i> Complejidad de diseño</li>
+                                    <li><i class="fas fa-times"></i> Mayor consumo energético</li>
+                                </ul>
+                                <div class="comp-footer">
+                                    <span class="tag legacy">Legado</span>
+                                </div>
+                            </div>
+                            
+                            <div class="comp-card risc">
+                                <div class="comp-header">
+                                    <i class="fas fa-bolt"></i>
+                                    <h4>RISC (ARM, RISC-V, MIPS)</h4>
+                                </div>
+                                <ul>
+                                    <li><i class="fas fa-check"></i> Instrucciones simples</li>
+                                    <li><i class="fas fa-check"></i> Longitud fija</li>
+                                    <li><i class="fas fa-check"></i> Muchos registros</li>
+                                    <li><i class="fas fa-check"></i> Alta eficiencia energética</li>
+                                    <li><i class="fas fa-check"></i> Diseño más simple</li>
+                                </ul>
+                                <div class="comp-footer">
+                                    <span class="tag efficient">Eficiente</span>
+                                    <span class="tag modern">Moderno</span>
+                                </div>
+                            </div>
+                            
+                            <div class="comp-card riscv">
+                                <div class="comp-header">
+                                    <i class="fas fa-unlock"></i>
+                                    <h4>RISC-V</h4>
+                                </div>
+                                <ul>
+                                    <li><i class="fas fa-check"></i> ISA abierta y modular</li>
+                                    <li><i class="fas fa-check"></i> Extensible personalizadamente</li>
+                                    <li><i class="fas fa-check"></i> Sin royalties</li>
+                                    <li><i class="fas fa-check"></i> Cataliza innovación vertical</li>
+                                    <li><i class="fas fa-check"></i> Soberanía tecnológica</li>
+                                </ul>
+                                <div class="comp-footer">
+                                    <span class="tag disruptive">Disruptivo</span>
+                                    <span class="tag open">Open Source</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- 2.4 Jerarquía de Memoria -->
+                <section id="jerarquia-memoria-teorica" class="section">
+                    <div class="section-header">
+                        <h3><i class="fas fa-layer-group"></i> 2.4. La Jerarquía de Memoria</h3>
+                        <div class="section-tag critical">Crítico</div>
+                    </div>
+                    <div class="section-content">
+                        <p>Principio de localidad. Funcionamiento y organización de caches (L1, L2, L3), memoria principal (DRAM) y almacenamiento persistente (NVMe SSD). Coherencia y consistencia.</p>
+                        
+                        <p>Construida sobre los principios de localidad temporal y espacial, es el sistema más crítico para el rendimiento.</p>
+                        
+                        <div class="memory-hierarchy">
+                            <div class="memory-level level1">
+                                <div class="level-header">
+                                    <i class="fas fa-running"></i>
+                                    <h5>Cachés L1/L2/L3</h5>
+                                </div>
+                                <div class="level-details">
+                                    <span class="speed">SRAM on-chip</span>
+                                    <span class="size">KB - MB</span>
+                                </div>
+                                <div class="level-desc">L1 dividida (I/D), L2/L3 compartidas</div>
+                            </div>
+                            
+                            <div class="memory-level level2">
+                                <div class="level-header">
+                                    <i class="fas fa-memory"></i>
+                                    <h5>Memoria Principal (DRAM)</h5>
+                                </div>
+                                <div class="level-details">
+                                    <span class="speed">Orden de magnitud más lenta</span>
+                                    <span class="size">GB</span>
+                                </div>
+                                <div class="level-desc">Organizada en bancos, filas y columnas</div>
+                            </div>
+                            
+                            <div class="memory-level level3">
+                                <div class="level-header">
+                                    <i class="fas fa-hdd"></i>
+                                    <h5>Almacenamiento (NVMe SSD)</h5>
+                                </div>
+                                <div class="level-details">
+                                    <span class="speed">µs de latencia</span>
+                                    <span class="size">TB</span>
+                                </div>
+                                <div class="level-desc">Basado en NAND Flash</div>
+                            </div>
+                        </div>
+                        
+                        <div class="note-box">
+                            <i class="fas fa-exclamation-triangle"></i>
+                            <div>
+                                <h4>Memory Wall</h4>
+                                <p>La latencia de acceso a una fila no activa (tRC) en DRAM define el "Memory Wall". La tecnología Storage Class Memory (SCM) como Intel Optane (3D XPoint) buscaba llenar este hueco, acercándose a una memoria no volátil de bajo latencia.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="callout">
+                            <h4>Coherencia de Caché</h4>
+                            <p>En sistemas multiprocesador, garantiza que todas las CPUs tengan una visión única y consistente de la memoria. Protocolos como MESI (Modified, Exclusive, Shared, Invalid) son fundamentales, pero añaden complejidad y tráfico en el bus (snooping) o el directorio.</p>
+                        </div>
+                    </div>
+                </section>
+            </section>
+            
+            <!-- Capítulo 3: Evolución del Procesador -->
+            <section id="capitulo3" class="chapter">
+                <div class="chapter-header">
+                    <div class="chapter-number">03</div>
+                    <h2 class="chapter-title">Capítulo 3: Evolución del Procesador: Del Uniprocesador al Chip Multinúcleo</h2>
+                    <div class="chapter-icon">
+                        <i class="fas fa-microchip"></i>
+                    </div>
+                </div>
+                
+                <!-- 3.1 Paralelismo a Nivel de Instrucción -->
+                <section id="paralelismo-ilp" class="section">
+                    <div class="section-header">
+                        <h3><i class="fas fa-project-diagram"></i> 3.1. Paralelismo a Nivel de Instrucción (ILP)</h3>
+                        <div class="section-tag technical">Técnico</div>
+                    </div>
+                    <div class="section-content">
+                        <div class="subseccion">
+                            <h4>Pipelining:</h4>
+                            <p>Segmentación, riesgos (hazards) y técnicas de resolución.</p>
+                        </div>
+                        
+                        <div class="subseccion">
+                            <h4>Arquitecturas Superscalar y Out-of-Order Execution:</h4>
+                            <p>Múltiples unidades de ejecución, ventana de instrucciones, renombre de registros.</p>
+                        </div>
+                        
+                        <div class="subseccion">
+                            <h4>Predicción de Saltos:</h4>
+                            <p>Métodos y su importancia crítica.</p>
+                        </div>
+                        
+                        <h4>Pipelining:</h4>
+                        <p>Divide la ejecución de una instrucción en etapas (Fetch, Decode, Execute, Memory, Write-back). Idealmente, una instrucción se completa por ciclo (CPI=1). Los riesgos (hazards) rompen esta ilusión:</p>
+                        
+                        <ul>
+                            <li><strong>Estructurales:</strong> Recursos duplicados (más ALUs).</li>
+                            <li><strong>De Datos:</strong> Dependencias RAW, WAR, WAW. Resueltas con forwarding/bypassing (reenvío de resultados entre etapas) y detenciones (stalls).</li>
+                            <li><strong>De Control:</strong> Por saltos. Solucionado con Predicción de Saltos (Branch Prediction). Predictores modernos (como el TAGE) usan historiales locales, globales y de camino, con aciertos >95%. Un fallo invalida el pipeline (penalización de varios ciclos).</li>
+                        </ul>
+                        
+                        <h4>Arquitecturas Superscalar y Ejecución Fuera de Orden (OoO):</h4>
+                        <p>Múltiples pipelines para ejecutar >1 instrucción por ciclo. La ventana de instrucciones (ej., 192 entradas en Intel Sunny Cove) examina un gran bloque de código, resuelve dependencias dinámicamente (renombre de registros usando una tabla de registros físicos) y envía instrucciones independientes a unidades de ejecución especializadas (enteras, FP, load/store, branch). El Reorder Buffer (ROB) asegura que los resultados se retiren (commit) en orden original para preservar la semántica secuencial. Esta complejidad es lo que choca con el ILP Wall.</p>
+                    </div>
+                </section>
+                
+                <!-- 3.2 Multiprocesamiento en Chip -->
+                <section id="multiprocesamiento-chip" class="section">
+                    <div class="section-header">
+                        <h3><i class="fas fa-sitemap"></i> 3.2. El Cambio de Paradigma: Multiprocesamiento en Chip (CMP)</h3>
+                        <div class="section-tag important">Importante</div>
+                    </div>
+                    <div class="section-content">
+                        <div class="subseccion">
+                            <h4>Causas:</h4>
+                            <p>Power wall y límites del ILP.</p>
+                        </div>
+                        
+                        <div class="subseccion">
+                            <h4>Arquitecturas de memoria compartida (UMA, NUMA):</h4>
+                            <p>Sockets y núcleos.</p>
+                        </div>
+                        
+                        <div class="subseccion">
+                            <h4>Desafíos de programación:</h4>
+                            <p>Modelos de programación paralela (hilos, OpenMP).</p>
+                        </div>
+                        
+                        <p><strong>MEJORA: Causas Primarias:</strong> El <strong>Power Wall</strong> (es más eficiente usar varios núcleos a baja frecuencia que uno complejo a alta frecuencia, Ley de Pollack) y el <strong>ILP Wall</strong> (la extracción de paralelismo implícito alcanzó rendimientos marginales decrecientes).</p>
+                        
+                        <h4>Organización:</h4>
+                        <p>Núcleos pueden ser:</p>
+                        <ul>
+                            <li><strong>Homogéneos:</strong> Todos iguales (ej., CPU de servidor).</li>
+                            <li><strong>Heterogéneos:</strong> Big.LITTLE de ARM (núcleos potentes + núcleos eficientes) para balance carga/energía.</li>
+                        </ul>
+                        
+                        <h4>Memoria Compartida:</h4>
+                        <p>Todos acceden a una dirección física única.</p>
+                        <ul>
+                            <li><strong>UMA (Acceso Uniforme a Memoria):</strong> Latencia igual para todos (bus o crossbar). No escala.</li>
+                            <li><strong>NUMA (Acceso No Uniforme):</strong> Cada núcleo/socket tiene memoria local más rápida. Acceder a memoria remota es más lento. Es el modelo en servidores y PCs multi-socket. Requiere SO y programas NUMA-aware.</li>
+                        </ul>
+                        
+                        <h4>El Desafío del Software:</h4>
+                        <p>El hardware proporciona capacidad, pero el software debe explotarla. Se requiere programación paralela explícita con hilos (pthreads, std::thread) y directivas (OpenMP, MPI para clusters). La ley de Amdahl se convierte en el principal limitante de aplicación.</p>
+                    </div>
+                </section>
+            </section>
+            
+            <!-- Capítulo 4: Arquitecturas Heterogéneas -->
+            <section id="capitulo4" class="chapter">
+                <div class="chapter-header">
+                    <div class="chapter-number">04</div>
+                    <h2 class="chapter-title">Capítulo 4: Arquitecturas Heterogéneas y Especializadas</h2>
+                    <div class="chapter-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                </div>
+                
+                <!-- 4.1 Aceleradores Hardware -->
+                <section id="aceleradores-hardware" class="section">
+                    <div class="section-header">
+                        <h3><i class="fas fa-bolt"></i> 4.1. Aceleradores Hardware: Filosofía "Domain-Specific Architecture" (DSA)</h3>
+                        <div class="section-tag">Innovador</div>
+                    </div>
+                    <div class="section-content">
+                        <p>Siguiendo la máxima de Patterson y Hennessy: "El camino a seguir es la especialización". En lugar de un procesador general ineficiente para una tarea, se diseña un acelerador óptimo para un dominio (Gráficos, Redes Neuronales, Criptografía, Procesamiento de Señales). La clave es balance entre eficiencia y flexibilidad.</p>
+                    </div>
+                </section>
+                
+                <!-- 4.2 GPU como Computadora Paralela -->
+                <section id="gpu-computadora-paralela" class="section">
+                    <div class="section-header">
+                        <h3><i class="fas fa-gamepad"></i> 4.2. La Unidad de Procesamiento Gráfico (GPU) como Computadora Masivamente Paralela</h3>
+                        <div class="section-tag technical">Técnico</div>
+                    </div>
+                    <div class="section-content">
+                        <p>Arquitectura SIMT (Single Instruction, Multiple Threads), jerarquía de hilos (warps/CU, bloques, grids). Modelo de programación CUDA/OpenCL.</p>
+                        
+                        <h4>Filosofía:</h4>
+                        <p>Mientras una CPU es un cerebro generalista (latencia baja, pocos núcleos complejos), una GPU es una fábrica masivamente paralela (alto throughput, miles de núcleos simples).</p>
+                        
+                        <h4>Modelo de Programación SIMT:</h4>
+                        <p>Una instrucción controla múltiples hilos de ejecución (usualmente 32, un warp en NVIDIA o wavefront en AMD). Los hilos en un warp ejecutan en lockstep.</p>
+                        
+                        <h4>Jerarquía de Memoria Clave:</h4>
+                        <ul>
+                            <li><strong>Memoria Global:</strong> GDDR6/HBM (alto ancho de banda, alta latencia).</li>
+                            <li><strong>Memoria Compartida por Bloque:</strong> SRAM on-chip, de baja latencia, para comunicación entre hilos.</li>
+                            <li><strong>Registros Privados por Hilo.</strong></li>
+                        </ul>
+                        
+                        <p><strong>Desafío:</strong> La eficiencia requiere miles de hilos para esconder la latencia de memoria. Cargas de trabajo irregulares o con divergencia de control (ifs dentro de un warp) penalizan fuertemente el rendimiento.</p>
+                    </div>
+                </section>
+                
+                <!-- 4.3 Otros Aceleradores -->
+                <section id="otros-aceleradores" class="section">
+                    <div class="section-header">
+                        <h3><i class="fas fa-cogs"></i> 4.3. Otros Aceleradores Clave</h3>
+                        <div class="section-tag">Especializado</div>
+                    </div>
+                    <div class="section-content">
+                        <div class="subseccion">
+                            <h4>TPUs (Tensor Processing Units):</h4>
+                            <p>Arquitectura optimizada para redes neuronales.</p>
+                        </div>
+                        
+                        <div class="subseccion">
+                            <h4>FPGAs:</h4>
+                            <p>Reconfigurabilidad para algoritmos específicos.</p>
+                        </div>
+                        
+                        <div class="subseccion">
+                            <h4>Unidades para Criptografía y Procesamiento de Señales.</h4>
+                        </div>
+                        
+                        <h4>TPU (Google):</h4>
+                        <p>Arquitectura Matricial para operaciones de multiplicación-acumulación (MAC). Minimalismo radical: sin cachés, sin predicción de saltos. Flujo de datos síncrono desde y hacia memoria. Unidades Systolic Array optimizan el flujo de datos para operaciones de matrices (clave en redes neuronales). <strong>MEJORA: Consigue órdenes de magnitud mejor rendimiento/Watt que CPU/GPU para inferencia y entrenamiento de modelos densos.</strong></p>
+                        
+                        <h4>FPGA (Intel, Xilinx/AMD):</h4>
+                        <p>Arquitectura Reconfigurable. Contiene un array de bloques lógicos (LUTs), memoria embebida y DSPs conectados por una red programable. Permite crear un circuito digital personalizado para un algoritmo específico tras la fabricación. <strong>Ventaja:</strong> flexibilidad y latencia predecible. <strong>Usos:</strong> prototipado, networking (SDN), algoritmos financieros.</p>
+                        
+                        <h4>NPU (Neural Processing Unit):</h4>
+                        <p>Acelerador específico para redes neuronales, integrado en SoCs móviles (Apple, Qualcomm, Samsung) y CPUs de cliente (Intel Meteor Lake, AMD Ryzen AI). Son versiones más integradas y eficientes que las TPUs para cargas de inferencia ligeras.</p>
+                    </div>
+                </section>
+                
+                <!-- 4.4 Sistemas SoC -->
+                <section id="sistemas-soc" class="section">
+                    <div class="section-header">
+                        <h3><i class="fas fa-cube"></i> 4.4. Sistemas SoC (System-on-a-Chip) e Integración</h3>
+                        <div class="section-tag">Integración</div>
+                    </div>
+                    <div class="section-content">
+                        <p>El ejemplo de los smartphones y consolas modernas (CPU+GPU+NPU+Modem en un solo chip).</p>
+                        
+                        <h4>System-on-Chip (SoC):</h4>
+                        <p>CPU, GPU, NPU, modems, controladores en un único die. Máxima eficiencia, difícil fabricación. Ejemplo: Apple M-series.</p>
+                        
+                        <h4>Chiplets:</h4>
+                        <p>Paradigma modular. Pequeños dies especializados (chiplets de CPU, I/O, GPU) son interconectados en un sustrato (interposer) mediante buses de ultra alto ancho de banda. <strong>MEJORA: El estándar emergente UCIe (Universal Chiplet Interconnect Express) busca estandarizar este ecosistema.</strong></p>
+                        
+                        <h4>Compute Express Link (CXL):</h4>
+                        <p>Protocolo crucial. Permite a la CPU acceder a memoria y aceleradores de otros chiplets de forma coherente, creando pools de memoria expandida y compartida. Es el bus que hará posible la integración profunda de aceleradores en la próxima década.</p>
+                    </div>
+                </section>
+            </section>
+            
+            <!-- Capítulo 5: Paradigmas Emergentes -->
+            <section id="capitulo5" class="chapter">
+                <div class="chapter-header">
+                    <div class="chapter-number">05</div>
+                    <h2 class="chapter-title">Capítulo 5: Paradigmas Emergentes y Visión de Futuro</h2>
+                    <div class="chapter-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                </div>
+                
+                <!-- 5.1 Más allá de la Ley de Moore -->
+                <section id="mas-alla-ley-moore" class="section">
+                    <div class="section-header">
+                        <h3><i class="fas fa-chart-line"></i> 5.1. Más Allá de la Ley de Moore</h3>
+                        <div class="section-tag">Futuro</div>
+                    </div>
+                    <div class="section-content">
+                        <p>Ley de Moore vs. Ley de Amdahl vs. Ley de Gustafson.</p>
+                        <p>Enfoques "More Than Moore": Integración 3D (chiplets), nuevos materiales (Grafeno), fotónica.</p>
+                        
+                        <h4>More Moore:</h4>
+                        <p>Continúa la miniaturización con nuevos materiales (Nanohojas de Silicio, RibbonFET), transistores GAA (Gate-All-Around) y empaquetado 3D.</p>
+                        
+                        <h4>More Than Moore:</h4>
+                        <p>Integración de funciones no digitales (sensores, RF) y la fotónica en chip. La comunicación óptica sustituirá a los buses eléctricos, ofreciendo enorme ancho de banda y baja latencia entre chiplets e incluso entre núcleos.</p>
+                    </div>
+                </section>
+                
+                <!-- 5.2 Arquitecturas Disruptivas -->
+                <section id="arquitecturas-disruptivas" class="section">
+                    <div class="section-header">
+                        <h3><i class="fas fa-atom"></i> 5.2. Arquitecturas Disruptivas</h3>
+                        <div class="section-tag disruptive">Disruptivo</div>
+                    </div>
+                    <div class="section-content">
+                        <div class="subseccion">
+                            <h4>Computación en Memoria (In-Memory Computing):</h4>
+                            <p>Reducir el movimiento de datos (procesamiento en DRAM o con memristores).</p>
+                        </div>
+                        
+                        <div class="subseccion">
+                            <h4>Computación Neuromórfica:</h4>
+                            <p>Chips que imitan la estructura del cerebro (espinas dendríticas, plasticidad sináptica). Ejemplo: Loihi de Intel.</p>
+                        </div>
+                        
+                        <div class="subseccion">
+                            <h4>Computación Cuántica:</h4>
+                            <p>Breve introducción al qubit, superposición y entrelazamiento. Arquitecturas de computadores cuánticos híbridos.</p>
+                        </div>
+                        
+                        <p>Estas arquitecturas buscan eliminar el bottleneck fundamental: mover datos.</p>
+                        
+                        <h5>A) Computación en Memoria (In-Memory Computing):</h5>
+                        <p><strong>Concepto:</strong> Realizar cálculos dentro del array de memoria, evitando el movimiento costoso de datos a la ALU.</p>
+                        
+                        <p><strong>Enfoques:</strong></p>
+                        <ul>
+                            <li><strong>Processing-in-Memory (PIM):</strong> Colocar lógica computacional simple dentro de los bancos de memoria DRAM (ej., Samsung HBM-PIM). Acelera operaciones como reducciones.</li>
+                            <li><strong>Computación con Memristores (Memcomputing):</strong> Usar dispositivos ReRAM o PCM que pueden almacenar (como memoria) y calcular (cambiando su resistencia) en el mismo lugar. Permiten realizar operaciones vectoriales directamente mediante leyes físicas (Ley de Ohm, Ley de Kirchhoff).</li>
+                        </ul>
+                        
+                        <p><strong>Potencial:</strong> Revolucionar cargas de trabajo intensivas en datos (grafos, bases de datos, IA).</p>
+                        
+                        <h5>B) Computación Neuromórfica:</h5>
+                        <p><strong>Inspiración:</strong> El cerebro es ultra-eficiente (~20W) para tareas de percepción y cognición.</p>
+                        
+                        <p><strong>Principios:</strong></p>
+                        <ul>
+                            <li><strong>Neuronas y Sinapsis:</strong> Unidades de procesamiento que integran pulsos (spikes) y sinapsis plásticas que almacenan pesos.</li>
+                            <li><strong>Codificación por Pulsos (Spiking):</strong> La información se codifica en el tiempo entre pulsos, no en valores continuos. Gran ahorro energético.</li>
+                            <li><strong>Computación Event-Driven:</strong> Solo se activan las neuronas que reciben un pulso.</li>
+                        </ul>
+                        
+                        <p><strong>Hardware:</strong> Loihi (Intel), TrueNorth (IBM), SpiNNaker (Univ. Manchester). Son asíncronos, masivamente paralelos y bajísimo consumo.</p>
+                        
+                        <p><strong>Desafío:</strong> Programación radicalmente diferente y dominio de aplicaciones aún en exploración (robótica, sensores, optimización).</p>
+                        
+                        <h5>C) Computación Cuántica:</h5>
+                        <p><strong>Base Física:</strong> Usa qubits, que pueden estar en superposición (0 y 1 simultáneamente) y entrelazados.</p>
+                        
+                        <p><strong>Arquitectura:</strong> Compuesto por:</p>
+                        <ul>
+                            <li><strong>Unidad Cuántica:</strong> Criostato a temperaturas milikelvin que aloja los qubits (superconductores, iones atrapados, etc.).</li>
+                            <li><strong>Unidad Clásica de Control:</strong> Genera pulsos de microondas para manipular qubits y corrige errores.</li>
+                        </ul>
+                        
+                        <p><strong>Modelo:</strong> Computadores cuánticos no son "CPU más rápidas". Son aceleradores para algoritmos específicos (Shor para factorización, Grover para búsqueda, simulación de materiales). Serán híbridos: una CPU clásica orquesta el trabajo de una unidad cuántica.</p>
+                    </div>
+                </section>
+                
+                <!-- 5.3 Importancia del Software -->
+                <section id="importancia-software" class="section">
+                    <div class="section-header">
+                        <h3><i class="fas fa-code"></i> 5.3. La Importancia del Software y la Co-diseño</h3>
+                        <div class="section-tag software">Software</div>
+                    </div>
+                    <div class="section-content">
+                        <p>Lenguajes de dominio específico (DSL), compiladores optimizados y la simbiosis necesaria entre hardware y software.</p>
+                        
+                        <p>No habrá un sustituto único para von Neumann. El futuro es un sistema de sistemas en capas:</p>
+                        
+                        <ul>
+                            <li><strong>Capa de Gestión/Control:</strong> CPUs de propósito general (RISC-V, ARM).</li>
+                            <li><strong>Capa de Aceleración Masiva:</strong> GPUs, FPGAs y DSAs para dominios amplios.</li>
+                            <li><strong>Capa de Aceleración Especializada:</strong> NPUs, PIM, y posiblemente unidades neuromórficas para tareas muy específicas.</li>
+                            <li><strong>Capa de Aceleración Disruptiva:</strong> Unidades cuánticas como co-procesadores para problemas específicos.</li>
+                        </ul>
+                        
+                        <div class="highlight-box">
+                            <div class="highlight-icon">
+                                <i class="fas fa-lightbulb"></i>
+                            </div>
+                            <div class="highlight-content">
+                                <h4>Clave del Éxito</h4>
+                                <p>El éxito dependerá de co-diseño hardware/software, interconexiones de ultra alto rendimiento (CXL, fotónica) y nuevos lenguajes/compiladores que puedan mapear problemas a este paisaje heterogéneo y complejo.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </section>
+            
+            <!-- Paradigma Centrípeto -->
+            <section id="paradigma-centripeto" class="chapter special-chapter">
+                <div class="chapter-header">
+                    <div class="chapter-number">06</div>
+                    <h2 class="chapter-title">LA TRANSICIÓN DEL PARADIGMA CENTRÍFUGO AL CENTRÍPETO EN LA ARQUITECTURA DE COMPUTADORAS</h2>
+                    <div class="chapter-icon">
+                        <i class="fas fa-sync-alt"></i>
+                    </div>
+                </div>
+                
+                <div class="section-content intro-paradigm">
+                    <p>Del CPU como Cerebrazo a la Orquestación de Especialistas</p>
+                    <p>La historia de la arquitectura de computadoras no es simplemente una evolución técnica, sino una transformación filosófica fundamental en cómo concebimos la computación. Hemos transitado desde un modelo centrífugo (todo gira alrededor de un CPU todopoderoso que atrae datos hacia sí) hacia un modelo centrípeto (el dato es el sol, y múltiples unidades especializadas orbitan alrededor de él, procesándolo donde reside).</p>
+                </div>
+                
+                <!-- 1. Era Centrífuga -->
+                <section id="era-centrifuga" class="section">
+                    <div class="section-header">
+                        <h3><i class="fas fa-history"></i> 1. LA ERA CENTRÍFUGA: EL IMPERIO DEL CPU (1945-2005)</h3>
+                        <div class="section-tag historical">Histórico</div>
+                    </div>
+                    <div class="section-content">
+                        <p><strong>Principio Operativo:</strong> "Atrae todos los datos hacia el procesador central para computarlos".</p>
+                        
+                        <h4>Fundación Von Neumann:</h4>
+                        <p>El CPU es el rey filósofo en el centro del universo computacional. La memoria, E/S y almacenamiento son provincias periféricas que sirven a su intelecto. El "bus del sistema" es el camino por el cual el rey ordena que le traigan datos para su deliberación.</p>
+                        
+                        <h4>La Obsesión por la Frecuencia (GHz):</h4>
+                        <p>La única métrica era cuán rápido podía "pensar" el rey. Se mejoraba su velocidad de razonamiento (pipelining), su capacidad de analizar múltiples ideas a la vez (superscalar), y su habilidad para reordenar pensamientos para mayor eficiencia (out-of-order execution).</p>
+                        
+                        <h4>El Reino se Expande:</h4>
+                        <p>Cuando un rey no era suficiente, se coronaban más reyes idénticos (multinúcleo homogéneo). Todos compartían el mismo trono (memoria) y gobernaban en paralelo, pero seguían exigiendo que los datos viajasen al castillo.</p>
+                        
+                        <h4>El Colapso:</h4>
+                        <p>La ley de Dennard (la electricidad se volvía más rebelde en reinos pequeños) y la Ley de Amdahl (no todo problema puede dividirse entre muchos reyes) mostraron los límites del imperio. El "Memory Wall" fue la revuelta popular: los datos, cansados de viajar largas distancias, se negaron a llegar a tiempo.</p>
+                    </div>
+                </section>
+                
+                <!-- 2. Punto de Inflexión -->
+                <section id="punto-inflexion" class="section">
+                    <div class="section-header">
+                        <h3><i class="fas fa-exchange-alt"></i> 2. EL PUNTO DE INFLEXIÓN: LA REVOLUCIÓN DE LOS GREMIOS (2005-2020)</h3>
+                        <div class="section-tag transition">Transición</div>
+                    </div>
+                    <div class="section-content">
+                        <p><strong>Principio Operativo:</strong> "Si el dato no va a Mahoma, Mahoma va al dato".</p>
+                        
+                        <h4>El Ascenso de los Especialistas:</h4>
+                        <p>Se reconoce que un rey generalista es ineficiente para tareas específicas. Surgen gremios especializados con sus propias fortalezas:</p>
+                        <ul>
+                            <li><strong>El Gremio de los Artistas (GPUs):</strong> Expertos en hacer la misma operación simple en miles de píxeles o vértices simultáneamente. No son filósofos, son artesanos masivos.</li>
+                            <li><strong>El Gremio de los Constructores (FPGAs):</strong> Arquitectos que pueden reconfigurar su taller (hardware) para adaptarse perfectamente a cada problema.</li>
+                        </ul>
+                        
+                        <h4>El Nuevo Gobierno (SoC - System on a Chip):</h4>
+                        <p>El rey (CPU) ya no gobierna solo. Ahora es un monarca constitucional que orquesta un parlamento de gremios en un solo palacio (el chip). Es más eficiente, pero la comunicación entre gremios es compleja.</p>
+                    </div>
+                </section>
+                
+                <!-- 3. Era Centrípeta -->
+                <section id="era-centripeta" class="section">
+                    <div class="section-header">
+                        <h3><i class="fas fa-bullseye"></i> 3. LA ERA CENTRÍPETA: EL DATO COMO ESTRELLA (2020 - Futuro)</h3>
+                        <div class="section-tag future">Futuro</div>
+                    </div>
+                    <div class="section-content">
+                        <p><strong>Principio Operativo:</strong> "El dato es soberano. La computación debe ir a su encuentro y servirlo en su territorio".</p>
+                        
+                        <h4>La Inversión Total del Paradigma:</h4>
+                        <p>Aquí es donde ocurre la verdadera ruptura. Ya no se mueven datos masivamente a una unidad de procesamiento. La procesión va a la montaña.</p>
+                        
+                        <h4>Manifestaciones Concretas:</h4>
+                        <ul>
+                            <li><strong>Computación en Memoria (In-Memory Computing):</strong> Se envía a un funcionario especializado a vivir dentro de la provincia de los datos (la memoria DRAM o NAND) para procesarlos in situ, sin moverlos. Ejemplo: Un "agente de reducción" que suma números directamente en el almacén de memoria.</li>
+                            
+                            <li><strong>Unidades de Procesamiento Neural (NPU) y Tensorial (TPU):</strong> Son talleres especializados construidos al lado del almacén de datos más relevante (la caché de alto nivel o memoria de banda ancha) para un tipo de dato muy concreto: las matrices (tensores) de la IA.</li>
+                            
+                            <li><strong>Interconexiones como CXL y Chiplets:</strong> Ya no son "caminos para traer datos", sino autopistas interestatales que permiten que un gremio en un chiplet acceda y procese datos que residen en la memoria local de otro chiplet, de forma coherente y rápida. La soberanía del dato se extiende más allá de un solo chip.</li>
+                            
+                            <li><strong>Computación Neuromórfica:</strong> Es la descentralización radical. En lugar de un rey o gremios, se crea una ciudad orgánica de "neuronas" (unidades simples) donde la computación y la memoria están fusionadas en cada intersección (sinapsis). El dato (el pulso eléctrico) se mueve lo mínimo indispensable entre vecinos.</li>
+                        </ul>
+                        
+                        <h4>Nuevo Rol del CPU:</h4>
+                        <p>De cerebro ejecutor a orquestador y gestor de recursos. Su función principal ahora es:</p>
+                        <ol class="numbered-list">
+                            <li>Ejecutar el código de control secuencial que no se puede paralelizar (el "monarca constitucional").</li>
+                            <li>Gestionar el sistema de memoria virtual y la coherencia.</li>
+                            <li>Programar y despachar tareas a los gremios especializados (GPU, NPU, aceleradores) de la manera más eficiente posible.</li>
+                            <li>Ser el interfaz universal para el software heredado y el sistema operativo.</li>
+                        </ol>
+                    </div>
+                </section>
+                
+                <!-- 4. Consecuencias -->
+                <section id="consecuencias-cambio" class="section">
+                    <div class="section-header">
+                        <h3><i class="fas fa-chart-bar"></i> 4. CONSECUENCIAS DE ESTE CAMBIO DE PARADIGMA</h3>
+                        <div class="section-tag analysis">Análisis</div>
+                    </div>
+                    <div class="section-content">
+                        <h4>Métrica Dominante:</h4>
+                        <p>De GHz (velocidad del rey) a Rendimiento por Vatio (eficiencia del ecosistema). Lo que importa es cuánto trabajo útil hace todo el sistema por cada julio de energía, no cuán rápido late un reloj.</p>
+                        
+                        <h4>Desafío de Software:</h4>
+                        <p>De programar para un rey a programar para una ciudad-estado. Los lenguajes y modelos de programación (como SYCL, OneAPI, o marcos de IA) deben poder describir el problema de manera que un orquestador inteligente (compilador + runtime) decida qué gremio o combinación de gremios lo resuelve mejor.</p>
+                        
+                        <h4>Diseño del Sistema:</h4>
+                        <p>De optimizar el camino al CPU a optimizar la colocación del dato. La pregunta de diseño clave ahora es: "¿Dónde coloco este bloque de datos en la jerarquía (cerca de qué tipo de procesador) para minimizar su movimiento y maximizar el procesamiento local?".</p>
+                        
+                        <h4>Innovación Abierta:</h4>
+                        <p>La arquitectura RISC-V encaja perfectamente aquí: permite crear gremios especializados a medida (extensiones personalizadas del ISA) sin pedir permiso a un "rey" tecnológico (ARM, x86).</p>
+                    </div>
+                </section>
+                
+                <!-- Conclusión -->
+                <section id="conclusion-paradigma" class="section">
+                    <div class="section-header">
+                        <h3><i class="fas fa-flag-checkered"></i> Conclusión</h3>
+                        <div class="section-tag conclusion">Conclusión</div>
+                    </div>
+                    <div class="section-content">
+                        <p><strong>Conclusión:</strong> Este viaje del centro a la periferia del procesamiento no es el fin de la historia, sino un nuevo principio. La arquitectura de computadores abandona su papel de proveedor de velocidad bruta para convertirse en el arte de orquestar la especialización. El próximo desafío, aún más profundo, será para el software: tendrá que aprender por fin a hablar el idioma del dato y a confiar en la inteligencia colectiva de los gremios especializados. En este nuevo mundo centrípeto, la eficiencia no se gana con un reloj más rápido, sino con una organización más sabia.</p>
+                    </div>
+                </section>
+            </section>
+            
+            <!-- Estructura Básica -->
+            <section id="estructura-basica" class="chapter">
+                <div class="chapter-header">
+                    <div class="chapter-number">07</div>
+                    <h2 class="chapter-title">ESTRUCTURA BÁSICA DE UNA COMPUTADORA</h2>
+                    <div class="chapter-icon">
+                        <i class="fas fa-sitemap"></i>
+                    </div>
+                </div>
+                
+                <div class="section-content">
+                    <h3 class="section-subtitle">NÚCLEO FUNDAMENTAL: LOS 4 COMPONENTES ESENCIALES</h3>
+                    
+                    <p>Toda computadora moderna se compone de cuatro bloques funcionales interconectados:</p>
+                    
+                    <!-- Componentes esenciales -->
+                    <div class="components-grid">
+                        <div class="component-card">
+                            <div class="comp-icon">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                            <h4>1. UNIDAD CENTRAL DE PROCESAMIENTO (CPU) - "El Cerebro"</h4>
+                            <p>Es el componente que ejecuta instrucciones del programa.</p>
+                            <ul class="component-list">
+                                <li><strong>Unidad de Control (UC):</strong> El "director de orquesta". Interpreta las instrucciones, coordina todos los componentes y genera las señales de control.</li>
+                                <li><strong>Unidad Aritmético-Lógica (ALU):</strong> El "calculador". Realiza operaciones matemáticas (suma, resta) y lógicas (AND, OR, comparaciones).</li>
+                                <li><strong>Registros:</strong> Pequeñas memorias ultrarrápidas dentro de la CPU para almacenar datos e instrucciones en uso inmediato (ej: registro acumulador, contador de programa).</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="component-card">
+                            <div class="comp-icon">
+                                <i class="fas fa-desktop"></i>
+                            </div>
+                            <h4>2. MEMORIA PRINCIPAL (RAM) - "El Escritorio de Trabajo"</h4>
+                            <p>Almacena temporalmente los programas y datos que se están usando en este momento.</p>
+                            <ul class="component-list">
+                                <li><strong>Características:</strong> Volátil (se borra al apagar), rápido acceso, capacidad limitada (8GB, 16GB, etc.).</li>
+                                <li><strong>Función:</strong> Proporciona a la CPU los datos e instrucciones que necesita en el instante preciso.</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="component-card">
+                            <div class="comp-icon">
+                                <i class="fas fa-exchange-alt"></i>
+                            </div>
+                            <h4>3. DISPOSITIVOS DE ENTRADA/SALIDA (E/S) - "Los Sentidos y las Manos"</h4>
+                            <p>Permiten la comunicación entre la computadora y el mundo exterior.</p>
+                            <ul class="component-list">
+                                <li><strong>Entrada:</strong> Teclado, mouse, micrófono, cámara, escáner.</li>
+                                <li><strong>Salida:</strong> Monitor, impresora, altavoces.</li>
+                                <li><strong>Entrada/Salida:</strong> Discos duros, memorias USB, tarjetas de red (envían y reciben datos).</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="component-card">
+                            <div class="comp-icon">
+                                <i class="fas fa-road"></i>
+                            </div>
+                            <h4>4. SISTEMA DE INTERCONEXIÓN (BUSES) - "Las Autopistas"</h4>
+                            <p>Conductos que permiten el flujo de datos y señales entre todos los componentes.</p>
+                            <ul class="component-list">
+                                <li><strong>Bus de Datos:</strong> Transporta los datos entre CPU, memoria y E/S.</li>
+                                <li><strong>Bus de Direcciones:</strong> Lleva la dirección de memoria o dispositivo a la que se quiere acceder.</li>
+                                <li><strong>Bus de Control:</strong> Transporta señales de sincronización y control (lectura, escritura, interrupciones).</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- Ciclo de operación -->
+                    <section id="ciclo-operacion" class="section">
+                        <div class="section-header">
+                            <h3><i class="fas fa-redo"></i> CICLO BÁSICO DE OPERACIÓN (LO QUE HACE CADA VEZ)</h3>
+                        </div>
+                        <div class="section-content">
+                            <ol class="numbered-list">
+                                <li><strong>FETCH (Búsqueda):</strong> La Unidad de Control obtiene la siguiente instrucción desde la Memoria Principal.</li>
+                                <li><strong>DECODE (Decodificación):</strong> La CPU interpreta qué significa esa instrucción.</li>
+                                <li><strong>EXECUTE (Ejecución):</strong> La ALU realiza la operación indicada (sumar, comparar, mover datos).</li>
+                                <li><strong>WRITE-BACK (Almacenamiento):</strong> Se guarda el resultado en un registro o en memoria.</li>
+                                <li><strong>Repite desde el paso 1</strong> para la siguiente instrucción.</li>
+                            </ol>
+                            
+                            <div class="example-box">
+                                <h5>Ejemplo Sencillo: 2 + 3 = ?</h5>
+                                <ol class="numbered-list">
+                                    <li><strong>FETCH:</strong> Trae la instrucción "SUMAR" desde memoria.</li>
+                                    <li><strong>DECODE:</strong> Entiende que debe sumar.</li>
+                                    <li><strong>EXECUTE:</strong> La ALU suma el 2 y el 3.</li>
+                                    <li><strong>WRITE-BACK:</strong> Guarda el resultado (5) en memoria o registro.</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </section>
+                    
+                    <!-- Componentes físicos -->
+                    <section id="componentes-fisicos" class="section">
+                        <div class="section-header">
+                            <h3><i class="fas fa-laptop"></i> VISTA PRÁCTICA: COMPONENTES FÍSICOS EN TU PC</h3>
+                        </div>
+                        <div class="section-content">
+                            <div class="table-container">
+                                <table class="styled-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Componente Físico</th>
+                                            <th>Función en la Estructura Básica</th>
+                                            <th>Ejemplo Real</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Procesador (CPU)</td>
+                                            <td>Unidad Central de Procesamiento completa (UC + ALU + Registros)</td>
+                                            <td>Intel Core i5, AMD Ryzen 7</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Memoria RAM</td>
+                                            <td>Memoria Principal</td>
+                                            <td>Módulo DDR4 de 8GB</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Disco Duro/SSD</td>
+                                            <td>Dispositivo de E/S (Almacenamiento)</td>
+                                            <td>SSD NVMe 512GB</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Placa Base</td>
+                                            <td>Sistema de Interconexión (contiene los buses)</td>
+                                            <td>Motherboard ASUS B660</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Puertos USB/HDMI</td>
+                                            <td>Interfaces para Dispositivos de E/S</td>
+                                            <td>Conector USB tipo A</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Tarjeta Gráfica</td>
+                                            <td>Dispositivo de E/S especializado (salida de video)</td>
+                                            <td>NVIDIA RTX 4060</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </section>
+                    
+                    <!-- Jerarquía de memoria -->
+                    <section id="jerarquia-memoria-sistema" class="section">
+                        <div class="section-header">
+                            <h3><i class="fas fa-layer-group"></i> JERARQUÍA DE MEMORIA (EL SISTEMA DE ALMACENAMIENTO)</h3>
+                        </div>
+                        <div class="section-content">
+                            <p>La computadora organiza la memoria en niveles, del más rápido/pequeño al más lento/grande:</p>
+                            
+                            <div class="memory-hierarchy-simple">
+                                <div class="memory-level-simple top">
+                                    <i class="fas fa-running"></i>
+                                    <div class="level-info">
+                                        <h5>Registros</h5>
+                                        <p>Dentro de la CPU → Más rápido, más caro, menos capacidad</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="memory-level-simple">
+                                    <i class="fas fa-tachometer-alt"></i>
+                                    <div class="level-info">
+                                        <h5>Caché L1, L2, L3</h5>
+                                        <p>En el chip del CPU</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="memory-level-simple">
+                                    <i class="fas fa-memory"></i>
+                                    <div class="level-info">
+                                        <h5>Memoria RAM</h5>
+                                        <p>Módulos en la placa base</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="memory-level-simple bottom">
+                                    <i class="fas fa-hdd"></i>
+                                    <div class="level-info">
+                                        <h5>Almacenamiento</h5>
+                                        <p>SSD/Disco Duro → Más lento, más barato, más capacidad</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="insight-box">
+                                <h4>¿Por qué esta jerarquía?</h4>
+                                <p>La CPU es muy rápida, pero la RAM es más lenta. La caché sirve de "mesa de trabajo" para tener datos usados recientemente a mano y no esperar a la RAM.</p>
+                            </div>
+                        </div>
+                    </section>
+                    
+                    <!-- Diagrama de flujo -->
+                    <section id="diagrama-flujo" class="section">
+                        <div class="section-header">
+                            <h3><i class="fas fa-project-diagram"></i> DIAGRAMA SIMPLIFICADO DEL FLUJO DE INFORMACIÓN</h3>
+                        </div>
+                        <div class="section-content">
+                            <div class="diagram-container">
+                                <pre><code>[Teclado/Mouse] → [CPU] ←→ [Memoria RAM]
+     (Entrada)      ↑↓          ↑↓
+[Monitor] ←─────┘   │          │
+   (Salida)         ↓          ↓
+             [Disco Duro/SSD]
+             (Almacenamiento)</code></pre>
+                            </div>
+                            
+                            <h4>Flujo típico:</h4>
+                            <ol class="numbered-list">
+                                <li>El programa está en el Disco Duro.</li>
+                                <li>Al ejecutarlo, se carga a la Memoria RAM.</li>
+                                <li>La CPU toma instrucciones de la RAM, las procesa.</li>
+                                <li>Los resultados se muestran en el Monitor o se guardan en el Disco Duro.</li>
+                            </ol>
+                        </div>
+                    </section>
+                    
+                    <!-- Conceptos clave -->
+                    <section id="conceptos-clave" class="section">
+                        <div class="section-header">
+                            <h3><i class="fas fa-key"></i> CONCEPTOS CLAVE ASOCIADOS</h3>
+                        </div>
+                        <div class="section-content">
+                            <div class="concepts-grid">
+                                <div class="concept-item">
+                                    <h5>ALU (Unidad Aritmético-Lógica)</h5>
+                                    <p>Realiza cálculos y decisiones lógicas.</p>
+                                </div>
+                                
+                                <div class="concept-item">
+                                    <h5>Registro</h5>
+                                    <p>Almacenamiento mínimo y ultra rápido dentro del CPU.</p>
+                                </div>
+                                
+                                <div class="concept-item">
+                                    <h5>Bus</h5>
+                                    <p>Autopista de datos entre componentes.</p>
+                                </div>
+                                
+                                <div class="concept-item">
+                                    <h5>Instrucción</h5>
+                                    <p>Orden que entiende la CPU (ej: "suma estos dos números").</p>
+                                </div>
+                                
+                                <div class="concept-item">
+                                    <h5>Programa</h5>
+                                    <p>Conjunto de instrucciones que resuelven un problema.</p>
+                                </div>
+                                
+                                <div class="concept-item">
+                                    <h5>Bit</h5>
+                                    <p>Unidad mínima de información (0 o 1).</p>
+                                </div>
+                                
+                                <div class="concept-item">
+                                    <h5>Byte</h5>
+                                    <p>8 bits (ej: una letra ocupa ~1 byte).</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    
+                    <!-- Analogía -->
+                    <section id="analogia-sencilla" class="section">
+                        <div class="section-header">
+                            <h3><i class="fas fa-building"></i> ANALOGÍA SENCILLA PARA ENTENDER</h3>
+                        </div>
+                        <div class="section-content">
+                            <p>Imagina una oficina:</p>
+                            
+                            <div class="analogy-box">
+                                <div class="analogy-content">
+                                    <div class="analogy-item">
+                                        <span class="analogy-role">CPU</span>
+                                        <span class="analogy-arrow">→</span>
+                                        <span class="analogy-desc">El trabajador (piensa, calcula, toma decisiones)</span>
+                                    </div>
+                                    <div class="analogy-item">
+                                        <span class="analogy-role">Memoria RAM</span>
+                                        <span class="analogy-arrow">→</span>
+                                        <span class="analogy-desc">El escritorio (donde tiene los papeles que está usando AHORA)</span>
+                                    </div>
+                                    <div class="analogy-item">
+                                        <span class="analogy-role">Disco Duro</span>
+                                        <span class="analogy-arrow">→</span>
+                                        <span class="analogy-desc">El archivero (donde guarda todos los documentos a largo plazo)</span>
+                                    </div>
+                                    <div class="analogy-item">
+                                        <span class="analogy-role">Buses</span>
+                                        <span class="analogy-arrow">→</span>
+                                        <span class="analogy-desc">Los pasillos (por donde se mueve la información)</span>
+                                    </div>
+                                    <div class="analogy-item">
+                                        <span class="analogy-role">Teclado/Mouse</span>
+                                        <span class="analogy-arrow">→</span>
+                                        <span class="analogy-desc">La recepcionista (recibe información del exterior)</span>
+                                    </div>
+                                    <div class="analogy-item">
+                                        <span class="analogy-role">Monitor</span>
+                                        <span class="analogy-arrow">→</span>
+                                        <span class="analogy-desc">La secretaria (muestra información al exterior)</span>
+                                    </div>
+                                    <div class="analogy-item">
+                                        <span class="analogy-role">Caché</span>
+                                        <span class="analogy-arrow">→</span>
+                                        <span class="analogy-desc">Los papeles en la mano del trabajador (acceso instantáneo)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    
+                    <!-- Resumen -->
+                    <section id="resumen-puntos" class="section">
+                        <div class="section-header">
+                            <h3><i class="fas fa-list-ol"></i> RESUMEN EN 4 PUNTOS</h3>
+                        </div>
+                        <div class="section-content">
+                            <ol class="numbered-list large">
+                                <li><strong>ENTRADA</strong> → Los datos entran por teclado, mouse, etc.</li>
+                                <li><strong>PROCESAMIENTO</strong> → La CPU calcula y decide qué hacer con esos datos.</li>
+                                <li><strong>ALMACENAMIENTO</strong> → Se guardan temporalmente (RAM) o permanentemente (Disco).</li>
+                                <li><strong>SALIDA</strong> → Los resultados se muestran en monitor, impresora, etc.</li>
+                            </ol>
+                            
+                            <div class="callout">
+                                <p>Esta estructura básica es universal: desde tu smartphone hasta un superordenador, todos siguen este mismo modelo fundamental de entrada-procesamiento-salida con los cuatro componentes esenciales interconectados.</p>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </section>
+            
+        </article>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-wave">
+            <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"></path>
+            </svg>
+        </div>
+        
+        <div class="footer-container">
+            <div class="footer-main">
+                <div class="footer-brand">
+                    <div class="brand-logo">
+                        <i class="fas fa-microchip"></i>
+                    </div>
+                    <div class="brand-info">
+                        <h3>Arquitectura de Computadores</h3>
+                        <p>De von Neumann al Paradigma Centrípeto</p>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="link-group">
+                        <h4><i class="fas fa-sitemap"></i> Navegación</h4>
+                        <ul>
+                            <li><a href="#capitulo1"><i class="fas fa-play"></i> Introducción</a></li>
+                            <li><a href="#capitulo2"><i class="fas fa-cogs"></i> Fundamentos</a></li>
+                            <li><a href="#estructura-basica"><i class="fas fa-sitemap"></i> Estructura</a></li>
+                            <li><a href="#paradigma-centripeto"><i class="fas fa-sync-alt"></i> Paradigma</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="link-group">
+                        <h4><i class="fas fa-external-link-alt"></i> Recursos</h4>
+                        <ul>
+                            <li><a href="https://github.com/ricecoder61-Ctrl/Desarrollo" target="_blank"><i class="fab fa-github"></i> Código en GitHub</a></li>
+                            <li><a href="#" id="print-btn"><i class="fas fa-print"></i> Versión Imprimible</a></li>
+                            <li><a href="#" id="pdf-btn"><i class="fas fa-file-pdf"></i> Exportar a PDF</a></li>
+                            <li><a href="#" id="cite-btn"><i class="fas fa-quote-right"></i> Citar Documento</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="link-group">
+                        <h4><i class="fas fa-info-circle"></i> Información</h4>
+                        <ul>
+                            <li><i class="fas fa-user"></i> Estudiante Autodidacta</li>
+                            <li><i class="fas fa-calendar"></i> <span id="footer-year"></span></li>
+                            <li><i class="fas fa-balance-scale"></i> CC BY-NC-SA 4.0</li>
+                            <li><i class="fas fa-code"></i> HTML5, CSS3, JS</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-stats">
+                    <div class="stat-item">
+                        <i class="fas fa-file-word"></i>
+                        <span id="word-count">Calculando...</span>
+                    </div>
+                    <div class="stat-item">
+                        <i class="fas fa-clock"></i>
+                        <span id="read-time">45 min lectura</span>
+                    </div>
+                    <div class="stat-item">
+                        <i class="fas fa-eye"></i>
+                        <span id="view-count">Visitas: --</span>
+                    </div>
+                </div>
+                
+                <div class="footer-copyright">
+                    <p>
+                        <i class="fas fa-laptop-code"></i> 
+                        Documento de Investigación • 
+                        <span id="current-year"></span> • 
+                        Construido con ❤️ para la comunidad
+                    </p>
+                    <p class="tech-stack">
+                        <span class="tech-tag"><i class="fab fa-html5"></i> HTML5</span>
+                        <span class="tech-tag"><i class="fab fa-css3-alt"></i> CSS3</span>
+                        <span class="tech-tag"><i class="fab fa-js"></i> JavaScript</span>
+                        <span class="tech-tag"><i class="fab fa-git-alt"></i> Git</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
