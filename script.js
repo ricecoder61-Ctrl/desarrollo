@@ -456,6 +456,82 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // ============================================
+// MEJORAS PARA NAVEGACIÓN EN MÓVIL
+// ============================================
+
+function setupMobileNavigation() {
+    const floatingNav = document.getElementById('floating-nav');
+    const navToggle = document.getElementById('nav-toggle');
+    
+    if (!floatingNav || !navToggle) return;
+    
+    // Detectar si estamos en móvil
+    function isMobile() {
+        return window.innerWidth <= 768;
+    }
+    
+    // Función para expandir/colapsar la navegación
+    function toggleNavExpansion() {
+        if (!isMobile()) return;
+        
+        if (floatingNav.classList.contains('expanded')) {
+            // Colapsar
+            floatingNav.classList.remove('expanded');
+            navToggle.innerHTML = '<i class="fas fa-bars"></i>';
+        } else {
+            // Expandir
+            floatingNav.classList.add('expanded');
+            navToggle.innerHTML = '<i class="fas fa-times"></i>';
+        }
+    }
+    
+    // Cerrar navegación al hacer clic en un enlace (solo en móvil)
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+            if (isMobile()) {
+                setTimeout(() => {
+                    floatingNav.classList.remove('expanded');
+                    navToggle.innerHTML = '<i class="fas fa-bars"></i>';
+                }, 300);
+            }
+        });
+    });
+    
+    // Cerrar navegación al hacer scroll (solo en móvil)
+    let scrollTimer;
+    window.addEventListener('scroll', () => {
+        if (!isMobile() || !floatingNav.classList.contains('expanded')) return;
+        
+        clearTimeout(scrollTimer);
+        scrollTimer = setTimeout(() => {
+            floatingNav.classList.remove('expanded');
+            navToggle.innerHTML = '<i class="fas fa-bars"></i>';
+        }, 500);
+    });
+    
+    // Configurar el botón de toggle
+    navToggle.addEventListener('click', toggleNavExpansion);
+    
+    // Inicializar estado según tamaño de pantalla
+    function initializeNavState() {
+        if (isMobile()) {
+            floatingNav.classList.remove('expanded');
+            navToggle.innerHTML = '<i class="fas fa-bars"></i>';
+        } else {
+            floatingNav.classList.add('expanded');
+        }
+    }
+    
+    // Ejecutar al cargar y al cambiar tamaño
+    initializeNavState();
+    window.addEventListener('resize', initializeNavState);
+}
+
+// Añadir esta función a la inicialización
+// Encuentra la función document.addEventListener('DOMContentLoaded'... y añade:
+// setupMobileNavigation(); después de setupFloatingNav();
+
+// ============================================
 // MANEJO DE ERRORES
 // ============================================
 

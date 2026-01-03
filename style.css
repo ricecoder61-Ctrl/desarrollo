@@ -1822,3 +1822,263 @@ strong[title="MEJORA"]::before {
         padding: 0.75rem;
     }
 }
+/* ============================================
+   CORRECCIONES PARA MÓVIL
+   ============================================ */
+
+/* 1. Arreglar desbordamiento en la jerarquía de memoria */
+@media (max-width: 768px) {
+    /* Para los niveles de memoria en 2.4 */
+    .memory-level {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        padding: 0.75rem;
+    }
+    
+    .level-header {
+        width: 100%;
+        justify-content: space-between;
+        margin-bottom: 0.5rem;
+    }
+    
+    .level-details {
+        width: 100%;
+        justify-content: space-between;
+        margin-bottom: 0.5rem;
+    }
+    
+    .speed, .size {
+        font-size: 0.75rem;
+        padding: 0.2rem 0.4rem;
+    }
+    
+    .level-desc {
+        width: 100%;
+        text-align: left;
+        font-size: 0.8rem;
+    }
+    
+    /* Para las métricas en 2.2 */
+    .metrics-grid .metric-card {
+        min-height: auto;
+        padding: 1rem;
+    }
+    
+    .metric-value {
+        font-size: 1rem;
+        word-break: break-word;
+    }
+    
+    /* Para tarjetas de comparación en 2.3 */
+    .comparison {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .comp-card ul li {
+        white-space: normal;
+        word-break: break-word;
+    }
+}
+
+/* 2. Mejorar visibilidad en móvil para contenido largo */
+@media (max-width: 480px) {
+    /* Forzar saltos de línea en textos largos */
+    .section-content h4,
+    .section-content h5,
+    .section-content p {
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+    
+    /* Ajustar tablas */
+    .styled-table {
+        font-size: 0.85rem;
+    }
+    
+    .styled-table th,
+    .styled-table td {
+        padding: 0.5rem;
+    }
+    
+    /* Ajustar diagramas de código */
+    .diagram-container {
+        font-size: 0.75rem;
+        padding: 1rem;
+        overflow-x: auto;
+    }
+    
+    /* Ajustar analogías */
+    .analogy-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.25rem;
+    }
+    
+    .analogy-arrow {
+        display: none;
+    }
+    
+    .analogy-role, .analogy-desc {
+        width: 100%;
+    }
+}
+/* ============================================
+   NAVEGACIÓN FLOTANTE RESPONSIVA
+   ============================================ */
+
+/* En móvil, la navegación será más compacta y menos intrusiva */
+@media (max-width: 768px) {
+    .floating-nav {
+        position: fixed;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 10px;
+        width: 90%;
+        max-width: 320px;
+        z-index: 999;
+        max-height: 60vh;
+        overflow-y: auto;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        border: 1px solid var(--border-color);
+        transition: all 0.3s ease;
+    }
+    
+    /* Estado colapsado por defecto en móvil */
+    .floating-nav:not(.expanded) {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        padding: 0;
+        overflow: hidden;
+    }
+    
+    .floating-nav:not(.expanded) .nav-header {
+        height: 60px;
+        padding: 0;
+        margin: 0;
+        border: none;
+        justify-content: center;
+    }
+    
+    .floating-nav:not(.expanded) .nav-header h3 {
+        display: none;
+    }
+    
+    .floating-nav:not(.expanded) .nav-toggle {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+    }
+    
+    .floating-nav:not(.expanded) .nav-links {
+        display: none;
+    }
+    
+    /* Cuando está expandida */
+    .floating-nav.expanded {
+        width: 90%;
+        max-width: 320px;
+        height: auto;
+        max-height: 70vh;
+        border-radius: var(--radius-lg);
+        padding: 1rem;
+    }
+    
+    .floating-nav.expanded .nav-header {
+        display: flex;
+        padding-bottom: 0.75rem;
+        border-bottom: 1px solid var(--border-color);
+        margin-bottom: 0.75rem;
+    }
+    
+    .floating-nav.expanded .nav-links {
+        display: block;
+        max-height: 50vh;
+        overflow-y: auto;
+    }
+    
+    /* Ajustar los enlaces */
+    .nav-links {
+        max-height: 40vh;
+    }
+    
+    .nav-link {
+        padding: 0.6rem;
+        font-size: 0.9rem;
+    }
+    
+    .nav-link i {
+        font-size: 0.9rem;
+        min-width: 20px;
+    }
+}
+
+/* Para tablets más pequeñas */
+@media (max-width: 576px) {
+    .floating-nav.expanded {
+        width: 95%;
+        max-width: none;
+    }
+    
+    .nav-link {
+        font-size: 0.85rem;
+        padding: 0.5rem;
+    }
+}
+
+/* Para evitar que tape el botón de tema en móvil */
+@media (max-width: 768px) {
+    .theme-toggle {
+        top: 80px;
+        right: 15px;
+        width: 45px;
+        height: 45px;
+        font-size: 1.1rem;
+    }
+}
+/* ============================================
+   SOLUCIÓN ESPECÍFICA PARA EL PROBLEMA DE "GB" EN 2.4
+   ============================================ */
+
+/* Ajustar los cuadros de tamaño en móvil */
+@media (max-width: 768px) {
+    .memory-level .level-details {
+        gap: 0.5rem;
+        margin: 0.5rem 0;
+    }
+    
+    .memory-level .speed,
+    .memory-level .size {
+        padding: 0.4rem 0.8rem !important; /* Más espacio interno */
+        margin: 0.15rem !important; /* Margen entre elementos */
+        min-width: 60px; /* Ancho mínimo */
+        text-align: center;
+        display: inline-block;
+    }
+    
+    /* Separación específica para "GB" */
+    .memory-level.level4 .size,
+    .memory-level.level5 .size {
+        padding: 0.4rem 1rem !important;
+        letter-spacing: 0.5px;
+    }
+}
+
+/* Para pantallas muy pequeñas */
+@media (max-width: 480px) {
+    .memory-level {
+        padding: 1rem !important;
+    }
+    
+    .memory-level .speed,
+    .memory-level .size {
+        font-size: 0.8rem !important;
+        padding: 0.35rem 0.7rem !important;
+        border-radius: 6px;
+    }
+}
